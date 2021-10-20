@@ -21,15 +21,20 @@ const TodoForm = ({
   }
 
   return (
-    <form onSubmit={onSubmit}>
-      <input 
+    <div className="d-flex justify-content-center">
+    <form className="form-group" onSubmit={onSubmit}>
+      <input className='form-control-lg'
+      style={{marginTop:20}}
 	type="text" 
-	placeholder="What needs to be done..." 
+	placeholder="Add Task" 
 	onChange={onChange}
 	value={title}
       />
-      <button type="submit">Submit</button>
+      <br/>
+  
+      <button style={{marginTop:20,marginLeft:70}}className="btn btn-primary" type="submit">Submit</button>
     </form>
+    </div>
   )
 }
 

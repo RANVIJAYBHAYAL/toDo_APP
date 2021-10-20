@@ -3,12 +3,16 @@ import PropTypes from 'prop-types'
 
 const TodoItem = ({ todo, deleteTodo }) => {
   return (
-    <p 
+    <div className="d-flex justify-content-center">
+    <ul className="list-group w-25"
+    
       onDoubleClick={() => deleteTodo(todo.id)} 
-      style={{ cursor: 'pointer' }}
+      style={{ cursor: 'pointer' ,marginTop:20}}
      >
-       {todo.title}
-     </p>
+      <li className="list-group-item"> {todo.title}</li>
+     </ul>
+
+     </div>
   )
 }
 
