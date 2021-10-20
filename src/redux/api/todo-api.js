@@ -1,14 +1,9 @@
-import defaultAxios from 'axios'
+import axios from 'axios'
 
-const axios = defaultAxios.create({
-  baseURL: 'https://jsonplaceholder.typicode.com/',
-  headers: {'Content-Type': 'application/json'}
-});
-
-// Get All Todos
 export const getAllTodos = async () => {
   try {
-    const todos = await axios.get('todos?_limit=5')
+    const todos = await axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10')
+    console.log(todos.data)
 
     return todos.data
   } catch(err) {
@@ -16,10 +11,9 @@ export const getAllTodos = async () => {
   }
 }
 
-// Create New Todo
 export const createNewTodo = async (title) => {
   try {
-    const todo = await axios.post('todos', {
+    const todo = await axios.post('https://jsonplaceholder.typicode.com/todos', {
       title
     })
 
@@ -28,14 +22,14 @@ export const createNewTodo = async (title) => {
     return console.error(err)
   }
 }
-
-// Delete existed todo
 export const deleteExistedTodo = async (id) => {
   try {
-    await axios.delete(`todos/${id}`)
+    await axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
     
     return id
   } catch(err) {
      return console.error(err)
   }
 }
+
+
